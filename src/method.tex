@@ -1,0 +1,90 @@
+前回の復習
+
+(T,V) \rightarrow (T',V')に対して、WとQの差
+
+\begin{equation}
+  Q[(T,V) \rightarrow (T',V')] - W[(T,V) \rightarrow (T',V')]
+\end{equation}
+
+は、
+
+1. 過程によらず
+2. 始状態と終状態で定まる
+
+1.3.3
+
+\subsection*{内部エネルギーの導出}
+
+既知としている量から内部エネルギー$U$を導きたい。そのために、$U$を状態方程式、熱容量から求める。
+
+\begin{enumerate}
+  \item T一定でのU(T,V)のT依存性（法則１）から、
+  \begin{eqnarray}
+    U(T_1, V) - U(T_0, V) &=& Q[(T_0,V) \rightarrow (T_1,V)]
+                          &=& \int_{T_0}^{T_1} C_V (T,V) dT
+    \label{hogehoge}
+  \end{eqnarray}
+  $C_V (T,V) > 0$とEq.\ref{hogehoge}より、定理1.1($U vs T$) $T_1 > T_0$に対して$U(T_0, V) < U(T_1, V)$で、Uは単調増加関数であることがわかる。また、
+  \begin{equation}
+    \left(\frac{dU(T:V)}{dT}\right)_V = C_V (T:V)
+  \end{equation}
+  \item T一定におけるU(T:V)のV依存性
+  \begin{equation}
+    \left(\frac{dU(T:V)}{dV}\right)_T = -P + T \frac{dP}{dT}_V
+  \end{equation}
+\end{enumerate}
+
+\begin{equation}
+  F &=& U - TS
+\end{equation}
+
+より
+
+\begin{eqnarray}
+  \left(\frac{\partial F}{\partial V}\right)_T = \left(\frac{\partial U}{\partial V}\right)_T - T\left(\frac{\partial S}{\partial V}\right)_T
+\end{eqnarray}
+
+$S = - \frac{\partial F}{\partial T}$なので、
+
+\begin{eqnarray}
+  \left(\frac{\partial S}{\partial V}\right) &=& - \frac{\partial}{\partial V}\left(\frac{\partial F}{\partial T}\right)
+    &=& - \frac{\partial}{\partial T}\left(\frac{\partial F}{\partial V}\right)
+    &=& \frac{\partial P}{\partial T}
+\end{eqnarray}
+
+また、
+
+\begin{equation}
+  \left(\frac{\partial U}{\partial V}\right)_T = -P + T \frac{\partial P}{\partial T}_V
+\end{equation}
+
+であるから、よって Eq.\ref{hogehoge}は
+
+\begin{eqnarray}
+  U(T_1, V) - U(T_0, V) 
+     &=& \int_{V_0}^{V_1} \left(\frac{\partial U}{\partial V}\right)_T dV
+  \label{hogehoge}
+\end{eqnarray}
+
+となる。例えば、理想気体の場合、$\left(\frac{\partial U}{\partial V}\right) = 0$になるため、$U(T:V)$は$V$に依存しない。
+
+\begin{equation}
+  U(T:V) = CNRT + U_*
+\end{equation}
+
+ただし$U_*$は資料的な定数である。
+
+\subsection*{熱力学第二法則}
+
+\begin{enumerate}
+  \item 熱力学第一法則はWとQの透過性を論じたのに対し
+  \item 熱力学第二法則はWとQの相違を述べる（熱と仕事は違う）
+\end{enumerate}
+
+前提1.8 ケルビンの原理
+
+流体がサイクル過程で（始状態と終状態が同じ過程）ある熱浴から$Q>0$を奪い、他に変化を残すことなく外界に吸収した熱量$Q$と同じ大きさの仕事$W>0$をすることはできない。
+
+\subsubsection{等温過程でのケルビンの原理}
+
+Note: 等温過程は\textbf{1つの}熱浴との間の熱のやり取りと
